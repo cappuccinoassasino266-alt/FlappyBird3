@@ -26,4 +26,4 @@ public class MenuController {
         Stage stage = (Stage) Stage.getWindows ().get (0);
         stage.close ();
     }
-}
+} //тут реалізованні усі кнопки, коли користувач нажимае на одну, то викликается метод

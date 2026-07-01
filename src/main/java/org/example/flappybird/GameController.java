@@ -69,14 +69,7 @@ public class GameController {
         pipe2.getTopPipe ().setRotate (180);
         pipe3.getTopPipe ().setRotate (180);
 
-        root.getChildren ().addAll (
-                pipe1.getTopPipe (),
-                pipe1.getBottomPipe (),
-                pipe2.getTopPipe (),
-                pipe2.getBottomPipe (),
-                pipe3.getTopPipe (),
-                pipe3.getBottomPipe (),
-                bird.getImageView ());
+        root.getChildren ().addAll (pipe1.getTopPipe (), pipe1.getBottomPipe (), pipe2.getTopPipe (), pipe2.getBottomPipe (),pipe3.getTopPipe (), pipe3.getBottomPipe (), bird.getImageView ());
         root.setOnMouseClicked (e -> {
             bird.jump ();});
         Platform.runLater (() -> {
@@ -133,7 +126,7 @@ public class GameController {
         }
         if (bird.getImageView ().getBoundsInParent ().intersects (pipe.getBottomPipe ().getBoundsInParent ())) {
             gameOver ();
-        }
+        } //перевіряє, чи пташка зіткнулася з трубою
     }
     private void gameOver() {
         if (gameEnded) {
@@ -145,7 +138,8 @@ public class GameController {
             highScore = score;
             HighScore.save (highScore);
         }
-        Platform.runLater (() -> {
+        Platform.runLater (() -> { //Після закінчення гри гра зупиняєтся
+            // та виводе результат пройдених труб
             Alert alert = new Alert (Alert.AlertType.INFORMATION);
             alert.setHeaderText ("Гру завершено!");
             alert.setContentText ("Ваш результат: " + score + "\nРекорд: " + highScore);

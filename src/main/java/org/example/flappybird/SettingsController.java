@@ -14,19 +14,13 @@ public class SettingsController {
     @FXML
     public void initialize() {
 
-        difficultyBox.getItems ().addAll (
-                "Easy",
-                "Normal",
-                "Hard"
-        );
+        difficultyBox.getItems ().addAll ("Easy", "Normal", "Hard");
 
-        difficultyBox.setValue (
-                GameSettings.difficulty
-        );
+        difficultyBox.setValue (GameSettings.difficulty);
     }
 
     @FXML
-    private void saveSettings() {
+    private void saveSettings() { //якщо сложність така, то й швидкість труб різна
 
         GameSettings.difficulty =
                 difficultyBox.getValue ();
@@ -54,17 +48,12 @@ public class SettingsController {
                 HelloApplication.class.getResource (
                         "menu-view.fxml"
                 )
-        );
+        ); //повернення до главного меню
 
-        Scene scene = new Scene (
-                loader.load (),
-                800,
-                600
-        );
+        Scene scene = new Scene (loader.load (), 800, 600);
 
-        Stage stage =
-                (Stage) Stage.getWindows ().get (0);
+        Stage stage = (Stage) Stage.getWindows ().get (0);
 
         stage.setScene (scene);
-    }
+    } //зміна розміру сцени
 }

@@ -16,14 +16,14 @@ public class Pipe {
         bottomPipe.setFitWidth (80);
         bottomPipe.setFitHeight (300);
         randomize ();
-        passed = false;
+        passed = false; //рандомна величина труб
     }
     public void randomize() {
         Random random = new Random ();
         int gapY = 180 + random.nextInt (140);
         topPipe.setLayoutY (gapY - 450);
         bottomPipe.setLayoutY (gapY + 170);
-        passed = false;
+        passed = false; //рандомне положення труб
     }
     public void move(double speed) {
         topPipe.setLayoutX (topPipe.getLayoutX () - speed);

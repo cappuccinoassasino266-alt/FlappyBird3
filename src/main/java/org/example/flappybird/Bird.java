@@ -12,7 +12,9 @@ public class Bird {
         imageView.setFitHeight(50);
         imageView.setLayoutX(200);
         imageView.setLayoutY(250);
-        velocityY = 0;
+        velocityY = 0; // Писав Костя.
+        // Це швидкість руху пташки по вертикалі,
+        // якщо число відємне, то вона летить вгору, а якщо додатнє вниз
     }
     public void jump() {
         velocityY = -4.5;
